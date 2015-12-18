@@ -17,7 +17,7 @@ function DrawableChart(id){
     
     // set data
     this.data = {
-        labels: [0,10,20],
+        labels: [],
         datasets: [
             {
                 label: "Data",
@@ -27,7 +27,7 @@ function DrawableChart(id){
                 pointStrokeColor: "#000000",
                 pointHighlightFill: "#ffffff",
                 pointHighlightStroke: "rgba(0,0,0,1)",
-                data: [20,40,10]
+                data: []
             },
         ]
     };
@@ -39,6 +39,7 @@ function DrawableChart(id){
         scaleStepWidth: 10,
         scaleStartValue: 0,
         showTooltips: true,
+        maintainAspectRatio: false,
     };
     
     // create chart
@@ -51,12 +52,12 @@ function DrawableChart(id){
         var y = e.clientY - rect.top;
         var width = this.element.width;
         var height = this.element.height;
-        var xval = (x-30)/(width-45)*100;
-        var yval = 100-((y-15)/(height-35)*100);
-        alert(yval);
-    };
+        var xval = Math.round((x-30)/(width-45)*100);
+        var yval = Math.round(100-((y-15)/(height-35)*100));
+        this.chart.addData([yval], xval);
+    }.bind(this);
     
     // update when clicked
-    this.element.addEventListener('click', this.update.bind(this));
+    this.element.addEventListener('click', this.update);
 
 }
