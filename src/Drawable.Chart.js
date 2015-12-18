@@ -16,24 +16,24 @@ function DrawableChart(id){
     this.ctx = this.element.getContext("2d");
     
     // set data
-    var data = {
+    this.data = {
         labels: [0,10,20],
         datasets: [
             {
-                label: "My First dataset",
-                fillColor: "rgba(220,0,0,.2)",
-                strokeColor: "rgba(220,0,0,1)",
-                pointColor: "rgba(220,0,0,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
+                label: "Data",
+                fillColor: "rgba(0,0,0,.2)",
+                strokeColor: "rgba(0,0,0,1)",
+                pointColor: "rgba(0,0,0,1)",
+                pointStrokeColor: "#000000",
+                pointHighlightFill: "#ffffff",
+                pointHighlightStroke: "rgba(0,0,0,1)",
                 data: [20,40,10]
             },
         ]
     };
     
     // special options
-    var options = {
+    this.options = {
         scaleOverride: true,
         scaleSteps: 10,
         scaleStepWidth: 10,
@@ -42,7 +42,7 @@ function DrawableChart(id){
     };
     
     // create chart
-    this.chart = new Chart(this.ctx).Line(data, options);
+    this.chart = new Chart(this.ctx).Line(this.data, this.options);
     
     // updating chart
     this.update = function(e){
