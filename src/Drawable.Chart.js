@@ -49,6 +49,11 @@ function DrawableChart(id){
         var rect = this.element.getBoundingClientRect();
         var x = e.clientX - rect.left;
         var y = e.clientY - rect.top;
+        var width = this.element.width;
+        var height = this.element.height;
+        var xval = (x-30)/(width-45)*100;
+        var yval = 100-((y-15)/(height-35)*100);
+        alert(yval);
     };
     
     // update when clicked
