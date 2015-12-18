@@ -46,10 +46,12 @@ function DrawableChart(id){
     
     // updating chart
     this.update = function(e){
-        
+        var rect = this.element.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
     };
     
     // update when clicked
-    this.element.addEventListener('click',this.update);
+    this.element.addEventListener('click', this.update.bind(this));
 
 }
