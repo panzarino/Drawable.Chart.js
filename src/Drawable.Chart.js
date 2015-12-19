@@ -111,6 +111,25 @@ function DrawableChart(id, options){
     // update when clicked
     this.element.addEventListener('click', this.update);
     
+    // delete point
+    this.delete = function(e){
+        e.preventDefault();
+        var rect = this.element.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var width = this.element.width;
+        var height = this.element.height;
+        var xval = Math.round((x-10)/(width-10)*100);
+        var yval = Math.round(100-((y-15)/(height-35)*100));
+        if (Math.abs(yval-this.chart.datasets[0].points[xval].value)<5){
+            this.chart.datasets[0].points[xval].value = null;
+            this.chart.update();
+        }
+    }.bind(this);
+    
+    // delete when right clicked
+    this.element.addEventListener("contextmenu", this.delete);
+    
     // clear all data
     this.clear = function(){
         for (var i=0; i<=100; i++){
