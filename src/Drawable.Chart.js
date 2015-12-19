@@ -32,6 +32,12 @@ function DrawableChart(id){
         ]
     };
     
+    // set labels
+    for (var i=0; i<=100; i++){
+        this.data['labels'].push("");
+        this.data['datasets'][0]['data'].push(null);
+    }
+    
     // special options
     this.options = {
         scaleOverride: true,
@@ -40,6 +46,10 @@ function DrawableChart(id){
         scaleStartValue: 0,
         showTooltips: true,
         maintainAspectRatio: false,
+        scaleGridLineWidth: 1,
+        showScale: true,
+        scaleShowLabels: false,
+        showTooltips: false,
     };
     
     // create chart
@@ -52,9 +62,10 @@ function DrawableChart(id){
         var y = e.clientY - rect.top;
         var width = this.element.width;
         var height = this.element.height;
-        var xval = Math.round((x-30)/(width-45)*100);
+        var xval = Math.round((x-10)/(width-10)*100);
         var yval = Math.round(100-((y-15)/(height-35)*100));
-        this.chart.addData([yval], xval);
+        this.chart.datasets[0].points[xval].value = yval;
+        this.chart.update();
     }.bind(this);
     
     // update when clicked
