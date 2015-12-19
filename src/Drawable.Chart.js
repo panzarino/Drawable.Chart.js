@@ -8,7 +8,7 @@
  * https://github.com/zachpanz88/Drawable.Chart.js
  */
 
-function DrawableChart(id, options, colors){
+function DrawableChart(id, options){
     // get canvas
     this.element = document.getElementById(id);
     this.ctx = this.element.getContext("2d");
@@ -37,8 +37,14 @@ function DrawableChart(id, options, colors){
     }
     
     // use custom colors if set
-    if (colors!="undefined"){
-        
+    if (options!="undefined"){
+        for (var i in options){
+            for (var z in this.data['datasets'][0]){
+                if (z===i && z!="data"){
+                    this.data['datasets'][0][z]=options[i];
+                }
+            }
+        }
     }
     
     // forced chart options
@@ -55,7 +61,7 @@ function DrawableChart(id, options, colors){
         for (var i in options){
             var isin = false;
             for (var z in this.options){
-                if (z==i){
+                if (z===i){
                     isin=true;
                     break;
                 }
@@ -76,7 +82,7 @@ function DrawableChart(id, options, colors){
     for (var i in rec_options){
         var isin = false;
         for (var z in this.options){
-            if (z==i){
+            if (z===i){
                 isin=true;
                 break;
             }
