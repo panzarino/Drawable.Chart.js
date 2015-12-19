@@ -8,9 +8,7 @@
  * https://github.com/zachpanz88/Drawable.Chart.js
  */
 
-
-function DrawableChart(id){
-    
+function DrawableChart(id, options, colors){
     // get canvas
     this.element = document.getElementById(id);
     this.ctx = this.element.getContext("2d");
@@ -38,19 +36,55 @@ function DrawableChart(id){
         this.data['datasets'][0]['data'].push(null);
     }
     
-    // special options
+    // use custom colors if set
+    if (colors!="undefined"){
+        
+    }
+    
+    // forced chart options
     this.options = {
         scaleOverride: true,
         scaleSteps: 10,
         scaleStepWidth: 10,
         scaleStartValue: 0,
-        showTooltips: true,
         maintainAspectRatio: false,
-        scaleGridLineWidth: 1,
-        showScale: true,
+    };
+    
+    // use custom options if not forced
+    if (typeof options !== "undefined"){
+        for (var i in options){
+            var isin = false;
+            for (var z in this.options){
+                if (z==i){
+                    isin=true;
+                    break;
+                }
+            }
+            if (!isin){
+                this.options[i]=options[i];
+            }
+        }
+    }
+    
+    // recommended options
+    var rec_options = {
         scaleShowLabels: false,
         showTooltips: false,
     };
+    
+    // use recommended options if not set otherwise
+    for (var i in rec_options){
+        var isin = false;
+        for (var z in this.options){
+            if (z==i){
+                isin=true;
+                break;
+            }
+        }
+        if (!isin){
+            this.options[i]=rec_options[i];
+        }
+    }
     
     // create chart
     this.chart = new Chart(this.ctx).Line(this.data, this.options);
