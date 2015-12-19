@@ -40,7 +40,7 @@ function DrawableChart(id, options){
     if (options!="undefined"){
         for (var i in options){
             for (var z in this.data['datasets'][0]){
-                if (z===i && z!="data"){
+                if (z===i && z!=="data"){
                     this.data['datasets'][0][z]=options[i];
                 }
             }
@@ -110,5 +110,13 @@ function DrawableChart(id, options){
     
     // update when clicked
     this.element.addEventListener('click', this.update);
+    
+    // clear all data
+    this.clear = function(){
+        for (var i=0; i<=100; i++){
+            this.chart.datasets[0].points[i].value = null;
+        }
+        this.chart.update();
+    };
 
 }
