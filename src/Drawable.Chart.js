@@ -1,6 +1,6 @@
 /*!
  * Drawable.Chart.js
- * Version: 0.0.0
+ * Version: 0.1.1
  *
  * Copyright 2015 Zach Panzarino
  * Released under the MIT license

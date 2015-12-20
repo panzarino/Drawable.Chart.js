@@ -1,6 +1,6 @@
 {
   "name": "drawable.chart.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plugin for Chart.js that allows users to draw charts",
   "author": "Zach Panzarino <zachary@panzarino.com>",
   "main": "src/Drawable.Chart.js",
