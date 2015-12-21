@@ -32,7 +32,7 @@ function DrawableChart(id, options){
     };
     
     // set labels
-    for (var i=0; i<=100; i++){
+    for (var i=0; i<100; i++){
         this.data['labels'].push("");
         this.data['datasets'][0]['data'].push(null);
     }
@@ -133,10 +133,20 @@ function DrawableChart(id, options){
     
     // clear all data
     this.clear = function(){
-        for (var i=0; i<=100; i++){
+        for (var i=0; i<this.chart.datasets[0].points.length; i++){
             this.chart.datasets[0].points[i].value = null;
         }
         this.chart.update();
-    };
+    }.bind(this);
+    
+    // return the values of the chart
+    this.export = function(){
+        var output = [];
+        var data = this.chart.datasets[0].points;
+        for (var x=0; x<data.length; x++){
+            output.push([x+1, data[x]['value']]);
+        }
+        return output;
+    }.bind(this);
 
 }
