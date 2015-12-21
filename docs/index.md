@@ -2,10 +2,7 @@
 title: Drawable.Chart.js Documentation
 
 language_tabs:
-  - javascript
-
-includes:
-  - errors
+  - HTML/JavaScript
 
 search: true
 ---
@@ -24,9 +21,10 @@ Drawable.Chart.js is available for download in multiple ways.
 The package relies on [Chart.js](https://github.com/nnnick/Chart.js), 
 which will be installed in addition to this package
 if Drawable.Chart.js is installed with `bower` or `npm`.
+> Make sure to also download Chart.js if you download a zip or tarball version of Drawable.Chart.js
 
 - Bower: `bower install Drawable.Chart.js --save`
-- NPM: `npm install drawable.chart.js --save`
+- NPM: `npm i drawable.chart.js --save`
 - Zip: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.zip) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.zip)
 - Tarball: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.tar.gz) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.tar.gz)
 
@@ -36,6 +34,8 @@ if Drawable.Chart.js is installed with `bower` or `npm`.
 <script src="js/Chart.min.js"></script>
 
 <script src="js/Drawable.Chart.js"></script>
+
+<!-- Obviously your script paths will probably be different -->
 
 <script>
     // your script goes here
@@ -60,4 +60,21 @@ Those two lines of HTML and JavaScript are the only required lines to get a simp
 
 ```javascript
 var myDrawableChart = new DrawableChart("myChart");
+```
+
+# Changing Colors
+
+The default color for drawable charts is black, but you probably want to create a chart with different colors. 
+You can specify an `options` parameter when you create a chart that can include the colors that you want to use.
+
+```javascript
+var options = {
+    fillColor: "rgba(0,0,220,.2)",
+    strokeColor: "rgba(220,0,0,1)",
+    pointColor: "rgba(0,220,0,1)",
+    pointStrokeColor: "#000000",
+    pointHighlightFill: "#ffffff",
+    pointHighlightStroke: "rgba(0,0,220,1)",
+}
+var myChart = new DrawableChart("myChart", options);
 ```

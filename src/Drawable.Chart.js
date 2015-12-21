@@ -9,6 +9,7 @@
  */
 
 function DrawableChart(id, options){
+    
     // get canvas
     this.element = document.getElementById(id);
     this.ctx = this.element.getContext("2d");
