@@ -9,11 +9,25 @@ search: true
 
 # Introduction
 
+Drawable.Chart.js is open source with all code being hosted on [GitHub](https://github.com/zachpanz88/Drawable.Chart.js).
+Chart.js is also hosed on [GitHub](https://github.com/nnnick/Chart.js).
+
+Drawable.Chart.js was created by [Zach Panzarino](https://github.com/zachpanz88) and 
+Chart.js was created by [Nick Downie](https://github.com/nnnick).
+
+Make sure to check out the creators and source code.
+
+
 Drawable.Chart.js is a JavaScript plugin that allows users to click points on a html canvas Chart. 
 Points can be made by right clicking the chart where you want the point to appear. 
 To remove a point, you can right click the point that you want to remove.
 Drawable.Chart.js reserves a global variable of DrawableChart for drawable charts 
 and Chart.js reserves a global variable of Chart for charts.
+
+Unfortunately, Drawable.Chart.js does not support mobile devices. 
+Repeated animation of graphs causes laggy performance (which can be disabled but can still be laggy) 
+and the charts are often too small to create accurate graphs. 
+However, you can still try to use Drawable.Chart.js on mobile if you really want to.
 
 # Installation
 
