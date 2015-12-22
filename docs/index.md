@@ -9,25 +9,11 @@ search: true
 
 # Introduction
 
-Drawable.Chart.js is open source with all code being hosted on [GitHub](https://github.com/zachpanz88/Drawable.Chart.js).
-Chart.js is also hosed on [GitHub](https://github.com/nnnick/Chart.js).
-
-Drawable.Chart.js was created by [Zach Panzarino](https://github.com/zachpanz88) and 
-Chart.js was created by [Nick Downie](https://github.com/nnnick).
-
-Make sure to check out the creators and source code.
-
-
 Drawable.Chart.js is a JavaScript plugin that allows users to click points on a html canvas Chart. 
 Points can be made by right clicking the chart where you want the point to appear. 
 To remove a point, you can right click the point that you want to remove.
 Drawable.Chart.js reserves a global variable of DrawableChart for drawable charts 
 and Chart.js reserves a global variable of Chart for charts.
-
-Unfortunately, Drawable.Chart.js does not support mobile devices. 
-Repeated animation of graphs causes laggy performance (which can be disabled but can still be laggy) 
-and the charts are often too small to create accurate graphs. 
-However, you can still try to use Drawable.Chart.js on mobile if you really want to.
 
 # Installation
 
@@ -37,8 +23,8 @@ which will be installed in addition to this package
 if Drawable.Chart.js is installed with `bower` or `npm`.
 > Make sure to also download Chart.js if you download a zip or tarball version of Drawable.Chart.js
 
-- Bower: `bower install Drawable.Chart.js`
-- NPM: `npm install drawable.chart.js`
+- Bower: `bower install Drawable.Chart.js --save`
+- NPM: `npm i drawable.chart.js --save`
 - Zip: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.zip) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.zip)
 - Tarball: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.tar.gz) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.tar.gz)
 
@@ -92,3 +78,21 @@ var options = {
 }
 var myChart = new DrawableChart("myChart", options);
 ```
+
+This code creates a drawable chart that has green filled dots with a black outline. 
+The line connecting the dots is red and 
+the fill color under the line is a transparent blue. 
+
+You can create charts with your own colors using the following options. 
+rgba or hex values can be used for all options. 
+All of these color options are optional, and the highlight options will not change 
+anything if `showTooltips` is set to false (which is highly reccomended and set by default).
+
+Name | Reccomended Value Type | Description
+---- | ---------------------- | -----------
+fillColor | rgba | The color that fills below the graph line (set transparency to 0 if you dont want to see a fill)
+strokeColor | rgba | The color of the line on the graph
+pointColor | rgba | The color of the points
+pointStrokeColor | hex | The color of the outline of the points
+pointHighlightFill | hex | The color of the points shown when highlighted if showTooltips is set to true
+pointHighlightStroke | rgba | The color of the outline of the points shown when points are highlighted if showTooltips is set to true
