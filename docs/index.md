@@ -9,11 +9,27 @@ search: true
 
 # Introduction
 
+Drawable.Chart.js is a plugin for Chart.js that allows users to draw charts
+
+Drawable.Chart.js is open source with all code being hosted on [GitHub](https://github.com/zachpanz88/Drawable.Chart.js).
+Chart.js is also hosed on [GitHub](https://github.com/nnnick/Chart.js).
+
+Drawable.Chart.js was created by [Zach Panzarino](https://github.com/zachpanz88) and 
+Chart.js was created by [Nick Downie](https://github.com/nnnick).
+
+Make sure to check out the creators and source code.
+
 Drawable.Chart.js is a JavaScript plugin that allows users to click points on a html canvas Chart. 
 Points can be made by right clicking the chart where you want the point to appear. 
 To remove a point, you can right click the point that you want to remove.
 Drawable.Chart.js reserves a global variable of DrawableChart for drawable charts 
 and Chart.js reserves a global variable of Chart for charts.
+
+Unfortunately, Drawable.Chart.js does not support mobile devices. 
+Repeated animation of graphs causes laggy performance (which can be disabled but can still be laggy) 
+and the charts are often too small to create accurate graphs. 
+Plus, the points do not render where the user clicks. 
+If this isn't stopping you, you can still try to use Drawable.Chart.js on mobile.
 
 # Installation
 
@@ -23,8 +39,8 @@ which will be installed in addition to this package
 if Drawable.Chart.js is installed with `bower` or `npm`.
 > Make sure to also download Chart.js if you download a zip or tarball version of Drawable.Chart.js
 
-- Bower: `bower install Drawable.Chart.js --save`
-- NPM: `npm i drawable.chart.js --save`
+- Bower: `bower install Drawable.Chart.js`
+- NPM: `npm install drawable.chart.js`
 - Zip: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.zip) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.zip)
 - Tarball: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.tar.gz) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.tar.gz)
 
@@ -35,10 +51,11 @@ if Drawable.Chart.js is installed with `bower` or `npm`.
 
 <script src="js/Drawable.Chart.js"></script>
 
-<!-- Obviously your script paths will probably be different -->
+<!-- Your script paths will probably be different -->
 
 <script>
-    // your script goes here
+    // you can link to an external js file
+    // or you can write your script here
 </script>
 ```
 
@@ -74,7 +91,7 @@ var options = {
     pointColor: "rgba(0,220,0,1)",
     pointStrokeColor: "#000000",
     pointHighlightFill: "#ffffff",
-    pointHighlightStroke: "rgba(0,0,220,1)",
+    pointHighlightStroke: "#000000",
 }
 var myChart = new DrawableChart("myChart", options);
 ```
@@ -85,14 +102,37 @@ the fill color under the line is a transparent blue.
 
 You can create charts with your own colors using the following options. 
 rgba or hex values can be used for all options. 
+Obviously, rgba values should be used for fillColor and other colors that you want to be partially transparent.
 All of these color options are optional, and the highlight options will not change 
-anything if `showTooltips` is set to false (which is highly reccomended and set by default).
+anything if `showTooltips` is set to false (which is highly recomended and set by default). 
+All color values (hex or rgba) should be passed as a string. rgba values should be passed as "rgba(r, g, b, a)" 
+where r is the red value, g is the green value, b is the blue value, and a is the transparecy value (decimal). 
+Hex values should be prefixed with a "#". Note: the tooltip options will not change anything if showTooltips is 
+not set to true (set to false by default).
 
-Name | Reccomended Value Type | Description
----- | ---------------------- | -----------
-fillColor | rgba | The color that fills below the graph line (set transparency to 0 if you dont want to see a fill)
-strokeColor | rgba | The color of the line on the graph
-pointColor | rgba | The color of the points
-pointStrokeColor | hex | The color of the outline of the points
-pointHighlightFill | hex | The color of the points shown when highlighted if showTooltips is set to true
-pointHighlightStroke | rgba | The color of the outline of the points shown when points are highlighted if showTooltips is set to true
+Name | Description
+---- | -----------
+fillColor | The color that fills below the graph line (set transparency to 0 if you dont want to see a fill)
+strokeColor | The color of the line on the graph
+pointColor | The color of the points
+pointStrokeColor | The color of the outline of the points
+pointHighlightFill | The color of the points shown when highlighted if showTooltips is set to true
+pointHighlightStroke | The color of the outline of the points shown when points are highlighted if showTooltips is set to true
+scaleGridLineColor | Color of the grid lines
+scaleLineColor | Color of the scale line
+tooltipFillColor | Tooltip background color if showTooltips is set to true
+tooltipFontColor | Tooltip label font color if showTooltips is set to true
+tooltipTitleFontColor | Tooltip title font color if showTooltips is set to true
+
+# Graph Options
+
+There are a number of special options that you can add to change the graph. 
+Most of these options come from Chart.js, 
+both the [global chart configuration](http://www.chartjs.org/docs/#getting-started-global-chart-configuration) and 
+the [line chart options](http://www.chartjs.org/docs/#line-chart-chart-options). 
+There are some options from Chart.js 
+that cannot be used because they will break the drawable feature. 
+Please only use the following options.
+
+Name | Value Type | Description
+---- | ---------- | -----------

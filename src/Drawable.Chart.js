@@ -55,6 +55,7 @@ function DrawableChart(id, options){
         scaleStepWidth: 10,
         scaleStartValue: 0,
         maintainAspectRatio: false,
+        responsive: false,
     };
     
     // use custom options if not forced
@@ -77,6 +78,7 @@ function DrawableChart(id, options){
     var rec_options = {
         scaleShowLabels: false,
         showTooltips: false,
+        scaleGridLineColor: "rgba(0,0,0,.1)",
     };
     
     // use recommended options if not set otherwise
