@@ -96,9 +96,9 @@ var options = {
 var myChart = new DrawableChart("myChart", options);
 ```
 
-This code creates a drawable chart that has green filled dots with a black outline. 
-The line connecting the dots is red and 
-the fill color under the line is a transparent blue. 
+> This code creates a drawable chart that has green filled dots with a black outline. 
+> The line connecting the dots is red and 
+> the fill color under the line is a transparent blue. 
 
 You can create charts with your own colors using the following options. 
 rgba or hex values can be used for all options. 
@@ -135,6 +135,19 @@ There are some options from Chart.js
 that cannot be used because they will break the drawable feature. 
 Please only use the following options. 
 These options can be specified in an `options` parameter when you create a chart.
+
+```javascript
+var options = {
+    bezierCurve: false,
+    pointDotRadius: 8,
+    datasetStrokeWidth: 10,
+    datasetFill : false,
+}
+var myChart = new DrawableChart("myChart", options);
+```
+> This code creates a chart with thick lines and large points. 
+> There is no curve between points on the line and there is no color fill underneath the line. 
+> This chart does not look very nice but is used as an example.
 
 ## DrawableChart Specific Options
 Name | Value Type | Default | Description
