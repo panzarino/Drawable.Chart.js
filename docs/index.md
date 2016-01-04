@@ -110,19 +110,20 @@ where r is the red value, g is the green value, b is the blue value, and a is th
 Hex values should be prefixed with a "#". Note: the tooltip options will not change anything if showTooltips is 
 not set to true (set to false by default).
 
-Name | Description
----- | -----------
-fillColor | The color that fills below the graph line (set transparency to 0 if you dont want to see a fill)
-strokeColor | The color of the line on the graph
-pointColor | The color of the points
-pointStrokeColor | The color of the outline of the points
-pointHighlightFill | The color of the points shown when highlighted if showTooltips is set to true
-pointHighlightStroke | The color of the outline of the points shown when points are highlighted if showTooltips is set to true
-scaleGridLineColor | Color of the grid lines
-scaleLineColor | Color of the scale line
-tooltipFillColor | Tooltip background color if showTooltips is set to true
-tooltipFontColor | Tooltip label font color if showTooltips is set to true
-tooltipTitleFontColor | Tooltip title font color if showTooltips is set to true
+Name | Default | Description
+---- | ------- | -----------
+fillColor | "rgba(0,0,0,.2)" | The color that fills below the graph line (set transparency to 0 if you dont want to see a fill)
+strokeColor | "rgba(0,0,0,1)" | The color of the line on the graph
+pointColor | "rgba(0,0,0,1)" | The color of the points
+pointStrokeColor | "#000000" | The color of the outline of the points
+pointHighlightFill | "#ffffff" | The color of the points shown when highlighted if showTooltips is set to true
+pointHighlightStroke | "rgba(0,0,0,1)" | The color of the outline of the points shown when points are highlighted if showTooltips is set to true
+scaleGridLineColor | "rgba(0,0,0,.1)" | Color of the grid lines (set a to 0 for no lines)
+scaleLineColor | "rgba(0,0,0,.1)" | Color of the scale (axis) line
+scaleFontColor | "#666" | Scale label font color (will not show unless scaleShowLabels is set to true)
+tooltipFillColor | "rgba(0,0,0,0.8)" | Tooltip background color if showTooltips is set to true
+tooltipFontColor | "#fff" | Tooltip label font color if showTooltips is set to true
+tooltipTitleFontColor | "#fff" | Tooltip title font color if showTooltips is set to true
 
 # Graph Options
 
@@ -134,5 +135,27 @@ There are some options from Chart.js
 that cannot be used because they will break the drawable feature. 
 Please only use the following options.
 
-Name | Value Type | Description
----- | ---------- | -----------
+Name | Value Type | Default | Description
+---- | ---------- | ------- | -----------
+animation | boolean | true | Whether to animate the chart
+animationSteps | number | 60 | Number of animation steps
+animationEasing | string | "easeOutQuart" | Animation easing effect. Possible effects are: [easeInOutQuart, linear, easeOutBounce, easeInBack, easeInOutQuad, easeOutQuart, easeOutQuad, easeInOutBounce, easeOutSine, easeInOutCubic, easeInExpo, easeInOutBack, easeInCirc, easeInOutElastic, easeOutBack, easeInQuad, easeInOutExpo, easeInQuart, easeOutQuint, easeInOutCirc, easeInSine, easeOutExpo, easeOutCirc, easeOutCubic, easeInQuint, easeInElastic, easeInOutSine, easeInOutQuint, easeInBounce, easeOutElastic, easeInCubic]
+showScale | boolean | true | If we should show the scale at all
+scaleLineWidth | number | 1 | Pixel width of the scale line
+scaleFontFamily | string | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Scale label font declaration for the scale label (will not show unless scaleShowLabels is set to true)
+scaleFontStyle | string | "normal" | Scale label font weight style (will not show unless scaleShowLabels is set to true)
+showTooltips | boolean | false | Determines whether to draw tooltips on the canvas or not, should be left as false
+tooltipEvents | string array | ["mousemove", "touchstart", "touchmove"] | Array of string names to attach tooltip events if showTooltips is set to true
+tooltipFontFamily | string | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Tooltip label font declaration for the scale label if showTooltips is set to true
+tooltipFontSize | number | 14 | Tooltip label font size in pixels if showTooltips is set to true
+tooltipFontStyle | string | "normal" | Tooltip font weight style if showTooltips is set to true
+tooltipTitleFontFamily | string | "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif" | Tooltip title font declaration for the scale label if showTooltips is set to true
+tooltipTitleFontSize | number | 14 | Tooltip title font size in pixels if showTooltips is set to true
+tooltipTitleFontStyle | string | "bold" | Tooltip title font weight style if showTooltips is set to true
+tooltipYPadding | number | 6 | pixel width of padding around tooltip text if showTooltips is set to true
+tooltipXPadding | number | 6 | pixel width of padding around tooltip text if showTooltips is set to true
+tooltipCaretSize | number | 8 | Size of the caret on the tooltip if showTooltips is set to true
+tooltipCornerRadius | number | 6 | Pixel radius of the tooltip border if showTooltips is set to true
+tooltipXOffset | number | 10 | Pixel offset from point x to tooltip edge if showTooltips is set to true
+onAnimationProgress | function | function(){} | Will fire on animation progression
+onAnimationComplete | function | function(){} | Will fire on animation completion
