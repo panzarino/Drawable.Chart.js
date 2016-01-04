@@ -2,10 +2,11 @@
 
 Plugin for Chart.js that allows users to draw charts
 
+### [Drawable.Chart.js Documentation](http://zachpanz88.github.io/Drawable.Chart.js)
+
 ![Example Chart](img/example.gif "Example Chart")
 
-Installation
-------------
+## Installation
 
 Drawable.Chart.js is available for download in multiple ways. 
 The package relies on [Chart.js](https://github.com/nnnick/Chart.js), 
@@ -16,5 +17,3 @@ if Drawable.Chart.js is installed with `bower` or `npm`.
 - NPM: `npm install drawable.chart.js`
 - Zip: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.zip) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.zip)
 - Tarball: [Download](https://github.com/zachpanz88/Drawable.Chart.js/archive/master.tar.gz) | [Download Chart.js](https://github.com/nnnick/Chart.js/archive/v1.0.2.tar.gz)
-
-[Documentation](http://zachpanz88.github.io/Drawable.Chart.js)
