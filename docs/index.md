@@ -84,6 +84,10 @@ var myDrawableChart = new DrawableChart("myChart");
 The default color for drawable charts is black, but you probably want to create a chart with different colors. 
 You can specify an `options` parameter when you create a chart that can include the colors that you want to use.
 
+> This code creates a drawable chart that has green filled dots with a black outline. 
+> The line connecting the dots is red and 
+> the fill color under the line is a transparent blue. 
+
 ```javascript
 var options = {
     fillColor: "rgba(0,0,220,.2)",
@@ -95,10 +99,6 @@ var options = {
 }
 var myChart = new DrawableChart("myChart", options);
 ```
-
-> This code creates a drawable chart that has green filled dots with a black outline. 
-> The line connecting the dots is red and 
-> the fill color under the line is a transparent blue. 
 
 You can create charts with your own colors using the following options. 
 rgba or hex values can be used for all options. 
@@ -136,6 +136,10 @@ that cannot be used because they will break the drawable feature.
 Please only use the following options. 
 These options can be specified in an `options` parameter when you create a chart.
 
+> This code creates a chart with thick lines and large points. 
+> There is no curve between points on the line and there is no color fill underneath the line. 
+> This chart does not look very nice but is used as an example.
+
 ```javascript
 var options = {
     bezierCurve: false,
@@ -145,9 +149,6 @@ var options = {
 }
 var myChart = new DrawableChart("myChart", options);
 ```
-> This code creates a chart with thick lines and large points. 
-> There is no curve between points on the line and there is no color fill underneath the line. 
-> This chart does not look very nice but is used as an example.
 
 ## DrawableChart Specific Options
 Name | Value Type | Default | Description
