@@ -133,8 +133,26 @@ both the [global chart configuration](http://www.chartjs.org/docs/#getting-start
 the [line chart options](http://www.chartjs.org/docs/#line-chart-chart-options). 
 There are some options from Chart.js 
 that cannot be used because they will break the drawable feature. 
-Please only use the following options.
+Please only use the following options. 
+These options can be specified in an `options` parameter when you create a chart.
 
+## DrawableChart Specific Options
+Name | Value Type | Default | Description
+---- | ---------- | ------- | -----------
+scaleShowGridLines | boolean | true | Whether grid lines are shown across the chart
+scaleGridLineWidth | number | 1 | Width of the grid lines
+scaleShowHorizontalLines | boolean | true | Whether to show horizontal lines (except X axis)
+scaleShowVerticalLines | boolean | true | Whether to show vertical lines (except Y axis)
+bezierCurve | boolean | true | Whether the line is curved between points
+bezierCurveTension | number | 0.4 | Tension of the bezier curve between points
+pointDot | boolean | true | Whether to show a dot for each point
+pointDotRadius | number | 4 | Radius of each point dot in pixels
+pointDotStrokeWidth | number | 1 | Pixel width of point dot stroke
+datasetStroke | boolean | true | Whether to show a stroke through the plotted points
+datasetStrokeWidth | number | 2 | Pixel width of dataset stroke
+datasetFill | boolean | true | Whether to fill the dataset with a color underneath the line
+
+## General Chart Options
 Name | Value Type | Default | Description
 ---- | ---------- | ------- | -----------
 animation | boolean | true | Whether to animate the chart
