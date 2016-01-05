@@ -1,6 +1,6 @@
 {
   "name": "Drawable.Chart.js",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/zachpanz88/Drawable.Chart.js",
   "author": "Zach Panzarino <zachary@panzarino.com>",
   "description": "Plugin for Chart.js that allows users to draw charts",

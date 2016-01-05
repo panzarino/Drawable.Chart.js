@@ -1,9 +1,6 @@
 ---
 title: Drawable.Chart.js Documentation
 
-language_tabs:
-  - HTML/JavaScript
-
 search: true
 ---
 
@@ -18,6 +15,8 @@ Drawable.Chart.js was created by [Zach Panzarino](https://github.com/zachpanz88)
 Chart.js was created by [Nick Downie](https://github.com/nnnick).
 
 Make sure to check out the creators and source code.
+
+> Welcome to the Drawable.Chart.js documentation
 
 Drawable.Chart.js is a JavaScript plugin that allows users to click points on a html canvas Chart. 
 Points can be made by right clicking the chart where you want the point to appear. 
