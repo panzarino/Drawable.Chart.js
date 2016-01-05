@@ -79,12 +79,33 @@ Those two lines of HTML and JavaScript are the only required lines to get a simp
 var myDrawableChart = new DrawableChart("myChart");
 ```
 
+# Chart Properties and Functions
+
+Each DrawableChart has a set of properties and functions. These functions are listed below.
+
+> This example code creates a button to clear the chart when clicked
+
+```html
+<button onclick="myDrawableChart.clear()">Clear Chart</button>
+```
+
+Name | Description
+---- | -----------
+element | HTML element that the chart is stored in
+ctx | HTML element in a 2D context
+data | Starting data used for the chart, includes dataset color options
+options | Special options specified for the chart, some are included by default
+chart | Chart.js object for the displayed chart
+delete | Function to delete a point where clicked, automatically set to run on right click
+clear | Function to erase all data in the chart
+export | Function to return all value pairs in the chart
+
 # Changing Colors
 
 The default color for drawable charts is black, but you probably want to create a chart with different colors. 
 You can specify an `options` parameter when you create a chart that can include the colors that you want to use.
 
-> This code creates a drawable chart that has green filled dots with a black outline. 
+> This example code creates a drawable chart that has green filled dots with a black outline. 
 > The line connecting the dots is red and 
 > the fill color under the line is a transparent blue. 
 
@@ -136,7 +157,7 @@ that cannot be used because they will break the drawable feature.
 Please only use the following options. 
 These options can be specified in an `options` parameter when you create a chart.
 
-> This code creates a chart with thick lines and large points. 
+> This example code creates a chart with thick lines and large points. 
 > There is no curve between points on the line and there is no color fill underneath the line. 
 > This chart does not look very nice but is used as an example.
 
